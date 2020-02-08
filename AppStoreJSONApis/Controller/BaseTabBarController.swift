@@ -10,17 +10,13 @@ import UIKit
 
 class BaseTabBarController: UITabBarController {
 
-    // 1 - create Today controller
-    // 2 - refactor our repeated logic inside of viewDidLoad
-    // 3 - maybe introduce our AppSearchController
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         viewControllers = [
             createNavController(viewController: UIViewController(), title: "Today", imageName: "today_icon"),
             createNavController(viewController: UIViewController(), title: "Apps", imageName: "apps"),
-            createNavController(viewController: AppSearchController(), title: "Search", imageName: "search"),
+            createNavController(viewController: AppSearchController(), title: "Search", imageName: "search")
         ]
     }
 
