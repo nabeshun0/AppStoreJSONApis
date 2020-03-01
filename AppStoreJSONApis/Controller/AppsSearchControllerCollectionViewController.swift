@@ -20,37 +20,23 @@ class AppSearchController: UICollectionViewController, UICollectionViewDelegateF
         fetchItunesApps()
     }
 
-    fileprivate func fetchItunesApps() {
-        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
-        guard let url = URL(string: urlString) else { return }
+    fileprivate var appResults = [Result]()
 
-        // fetch data from internet
-        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+    fileprivate func fetchItunesApps() {
+        Service.shared.fetchApps { (results, err) in
 
             if let err = err {
-                print("Failed to fetch apps:", err)
+                print("Failed to fetch apps:, \(err)")
+                return
             }
 
-            // success
-//            print(data)
-//            print(String(data: data!, encoding: .utf8))
-
-            guard let data = data else { return }
-
-            do {
-                let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-
-                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
-
-            } catch let jsonErr {
-                print("Failed to decode json:", jsonErr)
+            self.appResults = results
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
-
-
-
-
-
-        }.resume() // fires off the request
+        }
+        // we need to get back our search results somehow
+        // use a completion block
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -58,12 +44,16 @@ class AppSearchController: UICollectionViewController, UICollectionViewDelegateF
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return appResults.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
-        cell.nameLabel.text = "HERE IS MY APP NAME"
+
+        let appResult = appResults[indexPath.item]
+        cell.nameLabel.text = appResult.trackName
+        cell.categoryLabel.text = appResult.primaryGenreName
+        cell.ratingsLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
         return cell
     }
 

@@ -14,6 +14,7 @@
 		5E154BCC23DDF45A002A89A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E154BCA23DDF45A002A89A9 /* LaunchScreen.storyboard */; };
 		5E154BD423DDF5C9002A89A9 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E154BD323DDF5C9002A89A9 /* BaseTabBarController.swift */; };
 		5E4A9B7123EDAD0000822698 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A9B7023EDAD0000822698 /* SearchResultCell.swift */; };
+		5E833FF5240AC3AC00F54C58 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E833FF4240AC3AC00F54C58 /* Service.swift */; };
 		5E8787B423EE3E200009452D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8787B323EE3E1F0009452D /* UIView+Layout.swift */; };
 		5E8787B623EEB19F0009452D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8787B523EEB19F0009452D /* VerticalStackView.swift */; };
 		5EA3712C23ED75F500E1F043 /* AppsSearchControllerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3712B23ED75F500E1F043 /* AppsSearchControllerCollectionViewController.swift */; };
@@ -30,6 +31,7 @@
 		5E154BCD23DDF45A002A89A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E154BD323DDF5C9002A89A9 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		5E4A9B7023EDAD0000822698 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		5E833FF4240AC3AC00F54C58 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5E8787B323EE3E1F0009452D /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		5E8787B523EEB19F0009452D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		5EA3712B23ED75F500E1F043 /* AppsSearchControllerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchControllerCollectionViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		5E154BC023DDF459002A89A9 /* AppStoreJSONApis */ = {
 			isa = PBXGroup;
 			children = (
+				5E833FF3240AC38700F54C58 /* Service */,
 				5EAE650E23F0493900EFFFBB /* Model */,
 				5E8787B223EE3E060009452D /* Helpers */,
 				5E4A9B6F23EDACD100822698 /* Views */,
@@ -86,6 +89,14 @@
 				5E4A9B7023EDAD0000822698 /* SearchResultCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5E833FF3240AC38700F54C58 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5E833FF4240AC3AC00F54C58 /* Service.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		5E8787B223EE3E060009452D /* Helpers */ = {
@@ -191,6 +202,7 @@
 				5EAE651023F0495900EFFFBB /* SearchResult.swift in Sources */,
 				5E8787B423EE3E200009452D /* UIView+Layout.swift in Sources */,
 				5EA3712C23ED75F500E1F043 /* AppsSearchControllerCollectionViewController.swift in Sources */,
+				5E833FF5240AC3AC00F54C58 /* Service.swift in Sources */,
 				5E154BD423DDF5C9002A89A9 /* BaseTabBarController.swift in Sources */,
 				5E4A9B7123EDAD0000822698 /* SearchResultCell.swift in Sources */,
 				5E8787B623EEB19F0009452D /* VerticalStackView.swift in Sources */,
