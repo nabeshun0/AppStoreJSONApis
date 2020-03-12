@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,7 +18,7 @@
 		5E833FF5240AC3AC00F54C58 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E833FF4240AC3AC00F54C58 /* Service.swift */; };
 		5E8787B423EE3E200009452D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8787B323EE3E1F0009452D /* UIView+Layout.swift */; };
 		5E8787B623EEB19F0009452D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8787B523EEB19F0009452D /* VerticalStackView.swift */; };
-		5EA3712C23ED75F500E1F043 /* AppsSearchControllerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3712B23ED75F500E1F043 /* AppsSearchControllerCollectionViewController.swift */; };
+		5EA3712C23ED75F500E1F043 /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3712B23ED75F500E1F043 /* AppsSearchController.swift */; };
 		5EAE651023F0495900EFFFBB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE650F23F0495900EFFFBB /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 		5E833FF4240AC3AC00F54C58 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5E8787B323EE3E1F0009452D /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		5E8787B523EEB19F0009452D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
-		5EA3712B23ED75F500E1F043 /* AppsSearchControllerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchControllerCollectionViewController.swift; sourceTree = "<group>"; };
+		5EA3712B23ED75F500E1F043 /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
 		5EAE650F23F0495900EFFFBB /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		6791579A534005EDACD3981D /* Pods-AppStoreJSONApis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreJSONApis.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreJSONApis/Pods-AppStoreJSONApis.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				5E154BD323DDF5C9002A89A9 /* BaseTabBarController.swift */,
-				5EA3712B23ED75F500E1F043 /* AppsSearchControllerCollectionViewController.swift */,
+				5EA3712B23ED75F500E1F043 /* AppsSearchController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,7 +146,6 @@
 				6791579A534005EDACD3981D /* Pods-AppStoreJSONApis.debug.xcconfig */,
 				550C3FB864351804D60B7976 /* Pods-AppStoreJSONApis.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -270,7 +269,7 @@
 				5E154BC223DDF459002A89A9 /* AppDelegate.swift in Sources */,
 				5EAE651023F0495900EFFFBB /* SearchResult.swift in Sources */,
 				5E8787B423EE3E200009452D /* UIView+Layout.swift in Sources */,
-				5EA3712C23ED75F500E1F043 /* AppsSearchControllerCollectionViewController.swift in Sources */,
+				5EA3712C23ED75F500E1F043 /* AppsSearchController.swift in Sources */,
 				5E833FF5240AC3AC00F54C58 /* Service.swift in Sources */,
 				5E154BD423DDF5C9002A89A9 /* BaseTabBarController.swift in Sources */,
 				5E4A9B7123EDAD0000822698 /* SearchResultCell.swift in Sources */,

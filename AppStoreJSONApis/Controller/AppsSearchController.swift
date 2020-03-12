@@ -1,5 +1,5 @@
 //
-//  AppsSearchControllerCollectionViewController.swift
+//  AppsSearchController.swift
 //  AppStoreJSONApis
 //
 //  Created by member on 2020/02/07.
