@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class AppSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     fileprivate let cellId = "id1234"
 
