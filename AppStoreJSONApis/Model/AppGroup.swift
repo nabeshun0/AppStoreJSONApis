@@ -16,9 +16,9 @@ struct AppGroup: Decodable {
 
 struct Feed: Decodable {
     let title : String
-    let results: [FeesResult]
+    let results: [FeedResult]
 }
 
-struct FeesResult: Decodable {
+struct FeedResult: Decodable {
     let name, artistName, artworkUrl100: String
 }
