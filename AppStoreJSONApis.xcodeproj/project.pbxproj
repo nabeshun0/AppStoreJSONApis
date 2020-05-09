@@ -23,6 +23,7 @@
 		5E4B0DC3243A107E00B45638 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B0DC2243A107E00B45638 /* Extensions.swift */; };
 		5E4B0DC5243A1DCE00B45638 /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B0DC4243A1DCE00B45638 /* AppsPageHeader.swift */; };
 		5E4B0DC7243A274400B45638 /* AppHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B0DC6243A274400B45638 /* AppHeaderHorizontalController.swift */; };
+		5E5B8CB3246638EA00DC3876 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B8CB2246638EA00DC3876 /* AppDetailCell.swift */; };
 		5E65513A24552F9500D4809B /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65513924552F9500D4809B /* AppGroup.swift */; };
 		5E6843872457315A009655FF /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6843862457315A009655FF /* BetterSnappingLayout.swift */; };
 		5E7B04292455E02800B25539 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7B04282455E02800B25539 /* SocialApp.swift */; };
@@ -56,6 +57,7 @@
 		5E4B0DC2243A107E00B45638 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5E4B0DC4243A1DCE00B45638 /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
 		5E4B0DC6243A274400B45638 /* AppHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderHorizontalController.swift; sourceTree = "<group>"; };
+		5E5B8CB2246638EA00DC3876 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
 		5E65513924552F9500D4809B /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		5E6843862457315A009655FF /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
 		5E7B04282455E02800B25539 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
@@ -138,13 +140,21 @@
 		5E4B0DBB2439C88400B45638 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				5EA52D01245B25320005C66F /* Details */,
+				5E5B8CB1246638D000DC3876 /* Details */,
 				5E4B0DBC2439C8A200B45638 /* AppsGroupCell.swift */,
 				5E4B0DC0243A0F3A00B45638 /* AppRowCell.swift */,
 				5E4B0DC4243A1DCE00B45638 /* AppsPageHeader.swift */,
 				5E025BFE243B7E8E00C34B37 /* AppsHeaderCell.swift */,
 			);
 			path = Apps;
+			sourceTree = "<group>";
+		};
+		5E5B8CB1246638D000DC3876 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				5E5B8CB2246638EA00DC3876 /* AppDetailCell.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		5E833FF3240AC38700F54C58 /* Service */ = {
@@ -199,6 +209,7 @@
 		5EB76D6A24398AB4005E9FF6 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				5EA52D01245B25320005C66F /* Details */,
 				5EB76D6824398AAF005E9FF6 /* AppsPageController.swift */,
 				5E4B0DBE2439D21200B45638 /* AppsHorizontalController.swift */,
 				5E4B0DC6243A274400B45638 /* AppHeaderHorizontalController.swift */,
@@ -349,6 +360,7 @@
 				5E025BFF243B7E8E00C34B37 /* AppsHeaderCell.swift in Sources */,
 				5E8787B423EE3E200009452D /* UIView+Layout.swift in Sources */,
 				5E4B0DB924398EAA00B45638 /* BaseListController.swift in Sources */,
+				5E5B8CB3246638EA00DC3876 /* AppDetailCell.swift in Sources */,
 				5E4B0DC1243A0F3A00B45638 /* AppRowCell.swift in Sources */,
 				5EA3712C23ED75F500E1F043 /* AppsSearchController.swift in Sources */,
 				5E4B0DC7243A274400B45638 /* AppHeaderHorizontalController.swift in Sources */,

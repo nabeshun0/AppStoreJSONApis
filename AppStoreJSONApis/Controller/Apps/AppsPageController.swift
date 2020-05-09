@@ -75,7 +75,7 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
             // you should check the err
             dispatchGroup.leave()
             self.socialApps = apps ?? []
-//            self.collectionView.reloadData()
+            //            self.collectionView.reloadData()
         }
 
         // completion
@@ -125,6 +125,7 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         cell.horizontalController.didSelectHandler = { [weak self] feedResult in
 
             let controller = AppDetailController()
+            controller.appId = feedResult.id
             controller.navigationItem.title = feedResult.name
             self?.navigationController?.pushViewController(controller, animated: true)
         }
