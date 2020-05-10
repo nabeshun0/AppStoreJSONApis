@@ -36,6 +36,7 @@
 		5E729AD92467785700702B16 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E729AD82467785700702B16 /* TodayCell.swift */; };
 		5E729ADB246790F900702B16 /* AppFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E729ADA246790F900702B16 /* AppFullscreenController.swift */; };
 		5E729ADD2467939F00702B16 /* AppFullscreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E729ADC2467939F00702B16 /* AppFullscreenDescriptionCell.swift */; };
+		5E729ADF2467CD2600702B16 /* AppFullscreenHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E729ADE2467CD2600702B16 /* AppFullscreenHeaderCell.swift */; };
 		5E7B04292455E02800B25539 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7B04282455E02800B25539 /* SocialApp.swift */; };
 		5E833FF5240AC3AC00F54C58 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E833FF4240AC3AC00F54C58 /* Service.swift */; };
 		5E8787B423EE3E200009452D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8787B323EE3E1F0009452D /* UIView+Layout.swift */; };
@@ -80,6 +81,7 @@
 		5E729AD82467785700702B16 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		5E729ADA246790F900702B16 /* AppFullscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenController.swift; sourceTree = "<group>"; };
 		5E729ADC2467939F00702B16 /* AppFullscreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenDescriptionCell.swift; sourceTree = "<group>"; };
+		5E729ADE2467CD2600702B16 /* AppFullscreenHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenHeaderCell.swift; sourceTree = "<group>"; };
 		5E7B04282455E02800B25539 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		5E833FF4240AC3AC00F54C58 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5E8787B323EE3E1F0009452D /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				5E729AD82467785700702B16 /* TodayCell.swift */,
 				5E729ADC2467939F00702B16 /* AppFullscreenDescriptionCell.swift */,
+				5E729ADE2467CD2600702B16 /* AppFullscreenHeaderCell.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				5E4B0DC3243A107E00B45638 /* Extensions.swift in Sources */,
 				5E154BD423DDF5C9002A89A9 /* BaseTabBarController.swift in Sources */,
 				5EA52D03245B25E90005C66F /* AppDetailController.swift in Sources */,
+				5E729ADF2467CD2600702B16 /* AppFullscreenHeaderCell.swift in Sources */,
 				5E95131224572B4A009B4438 /* HorizontalSnappingController.swift in Sources */,
 				5E4A9B7123EDAD0000822698 /* SearchResultCell.swift in Sources */,
 				5E4B0DBF2439D21200B45638 /* AppsHorizontalController.swift in Sources */,
