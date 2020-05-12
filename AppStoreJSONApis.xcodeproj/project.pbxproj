@@ -46,6 +46,7 @@
 		5EA52D03245B25E90005C66F /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA52D02245B25E90005C66F /* AppDetailController.swift */; };
 		5EAE651023F0495900EFFFBB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE650F23F0495900EFFFBB /* SearchResult.swift */; };
 		5EB76D6924398AAF005E9FF6 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB76D6824398AAF005E9FF6 /* AppsPageController.swift */; };
+		5EDF2E222469981300ACCA06 /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF2E212469981300ACCA06 /* TodayItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		5EA52D02245B25E90005C66F /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		5EAE650F23F0495900EFFFBB /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		5EB76D6824398AAF005E9FF6 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
+		5EDF2E212469981300ACCA06 /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
 		6791579A534005EDACD3981D /* Pods-AppStoreJSONApis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreJSONApis.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreJSONApis/Pods-AppStoreJSONApis.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +253,7 @@
 				5E65513924552F9500D4809B /* AppGroup.swift */,
 				5E7B04282455E02800B25539 /* SocialApp.swift */,
 				5E729AD22466FF5400702B16 /* Reviews.swift */,
+				5EDF2E212469981300ACCA06 /* TodayItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				5E4B0DC1243A0F3A00B45638 /* AppRowCell.swift in Sources */,
 				5E729ACB2466B02900702B16 /* PreviewScreenshotsController.swift in Sources */,
 				5EA3712C23ED75F500E1F043 /* AppsSearchController.swift in Sources */,
+				5EDF2E222469981300ACCA06 /* TodayItem.swift in Sources */,
 				5E4B0DC7243A274400B45638 /* AppHeaderHorizontalController.swift in Sources */,
 				5E729ADD2467939F00702B16 /* AppFullscreenDescriptionCell.swift in Sources */,
 				5E4B0DBD2439C8A200B45638 /* AppsGroupCell.swift in Sources */,
