@@ -80,6 +80,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
                 TodayItem.init(category: "Daily List", title: topGrossingGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, apps: topGrossingGroup?.feed.results ?? []),
                 TodayItem.init(category: "Daily List", title: gamesGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, apps: gamesGroup?.feed.results ?? []),
                 TodayItem.init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you nee to intellingently organize your life the right way.", backgroundColor: .white, cellType: .single, apps: []),
+                TodayItem.init(category: "HOLIDAYS", title: "Travel on Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9842324853, green: 0.9647551179, blue: 0.7214853168, alpha: 1), cellType: .single, apps: [])
             ]
             self.collectionView.reloadData()
         }
@@ -93,6 +94,13 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     var heightConstraint: NSLayoutConstraint?
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        if items[indexPath.item].cellType == .multiple {
+            let fullController = TodayMultipleAppsController(mode: .fullscreen)
+            fullController.results = self.items[indexPath.item].apps
+            present(fullController, animated: true)
+            return
+        }
 
         let appFullscreenController = AppFullscreenController()
         appFullscreenController.todayItem = items[indexPath.row]
