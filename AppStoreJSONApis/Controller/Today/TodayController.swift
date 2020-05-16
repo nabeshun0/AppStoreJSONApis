@@ -10,19 +10,6 @@ import UIKit
 
 class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 
-//    fileprivate let cellId = "cellId"
-//    fileprivate let multipleAppCellId = "multipleAppCellId"
-
-//    let items = [
-//        TodayItem.init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you nee to intellingently organize your life the right way.", backgroundColor: .white, cellType: .single),
-//
-//        TodayItem.init(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple),
-//
-//        TodayItem.init(category: "HOLIDAYS", title: "Travel on Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9842324853, green: 0.9647551179, blue: 0.7214853168, alpha: 1), cellType: .single),
-//
-//        TodayItem.init(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple)
-//    ]
-
     var items = [TodayItem]()
 
     let acticityIndicatorView: UIActivityIndicatorView = {
@@ -32,6 +19,12 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         aiv.hidesWhenStopped = true
         return aiv
     }()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        tabBarController?.tabBar.superview?.setNeedsLayout()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,8 +90,8 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 
         if items[indexPath.item].cellType == .multiple {
             let fullController = TodayMultipleAppsController(mode: .fullscreen)
-            fullController.results = self.items[indexPath.item].apps
-            present(fullController, animated: true)
+            fullController.apps = self.items[indexPath.item].apps
+            present(BackEnabledNavigationController(rootViewController: fullController), animated: true)
             return
         }
 
@@ -197,20 +190,32 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BaseTodayCell
         cell.todayItem = items[indexPath.item]
 
+        (cell as? TodayMultipleAppCell)?.multipleAppsController.collectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleMultipleAppsTap)))
+
         return cell
+    }
 
+    @objc fileprivate func handleMultipleAppsTap(gesture: UITapGestureRecognizer) {
 
-        // multiple app cell
-//        // gard coded check
-//        if indexPath.item == 0 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TodayItem.CellType.multiple.rawValue, for: indexPath) as! TodayMultipleAppCell
-//            cell.todayItem = items[indexPath.item]
-//            return cell
-//        }
-//
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TodayItem.CellType.single.rawValue, for: indexPath) as! TodayCell
-//        cell.todayItem = items[indexPath.item]
-//        return cell
+        let collectionView = gesture.view
+
+        // figure out which cell were clicking into
+
+        var superview = collectionView?.superview
+
+        while superview != nil {
+            if let cell = superview as? TodayMultipleAppCell {
+                guard let indexPath = self.collectionView.indexPath(for: cell) else { return }
+                let apps = self.items[indexPath.item].apps
+
+                let fullController = TodayMultipleAppsController(mode: .fullscreen)
+                fullController.apps = apps
+                present(fullController, animated: true)
+                return
+            }
+
+            superview = superview?.superview
+        }
     }
 
     static let cellSize: CGFloat = 500

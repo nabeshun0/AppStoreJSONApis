@@ -39,6 +39,7 @@
 		5E729ADB246790F900702B16 /* AppFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E729ADA246790F900702B16 /* AppFullscreenController.swift */; };
 		5E729ADD2467939F00702B16 /* AppFullscreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E729ADC2467939F00702B16 /* AppFullscreenDescriptionCell.swift */; };
 		5E729ADF2467CD2600702B16 /* AppFullscreenHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E729ADE2467CD2600702B16 /* AppFullscreenHeaderCell.swift */; };
+		5E72B378247026BE001E7EA1 /* BackEnabledNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72B377247026BE001E7EA1 /* BackEnabledNavigationController.swift */; };
 		5E7B04292455E02800B25539 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7B04282455E02800B25539 /* SocialApp.swift */; };
 		5E833FF5240AC3AC00F54C58 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E833FF4240AC3AC00F54C58 /* Service.swift */; };
 		5E8787B423EE3E200009452D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8787B323EE3E1F0009452D /* UIView+Layout.swift */; };
@@ -89,6 +90,7 @@
 		5E729ADA246790F900702B16 /* AppFullscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenController.swift; sourceTree = "<group>"; };
 		5E729ADC2467939F00702B16 /* AppFullscreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenDescriptionCell.swift; sourceTree = "<group>"; };
 		5E729ADE2467CD2600702B16 /* AppFullscreenHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenHeaderCell.swift; sourceTree = "<group>"; };
+		5E72B377247026BE001E7EA1 /* BackEnabledNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackEnabledNavigationController.swift; sourceTree = "<group>"; };
 		5E7B04282455E02800B25539 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		5E833FF4240AC3AC00F54C58 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5E8787B323EE3E1F0009452D /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				5E729AD52467768600702B16 /* TodayController.swift */,
 				5E729ADA246790F900702B16 /* AppFullscreenController.swift */,
 				5E248EFB246F896800765DC7 /* TodayMultipleAppsController.swift */,
+				5E72B377247026BE001E7EA1 /* BackEnabledNavigationController.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				5E4B0DC5243A1DCE00B45638 /* AppsPageHeader.swift in Sources */,
 				5E729AC92466AD0000702B16 /* PreviewCell.swift in Sources */,
 				5E729ACF2466E62300702B16 /* ReviewsController.swift in Sources */,
+				5E72B378247026BE001E7EA1 /* BackEnabledNavigationController.swift in Sources */,
 				5E729AD32466FF5400702B16 /* Reviews.swift in Sources */,
 				5E729AD62467768600702B16 /* TodayController.swift in Sources */,
 				5E833FF5240AC3AC00F54C58 /* Service.swift in Sources */,
