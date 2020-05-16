@@ -13,24 +13,33 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 //    fileprivate let cellId = "cellId"
 //    fileprivate let multipleAppCellId = "multipleAppCellId"
 
-    let items = [
-        TodayItem.init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you nee to intellingently organize your life the right way.", backgroundColor: .white, cellType: .single),
+//    let items = [
+//        TodayItem.init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you nee to intellingently organize your life the right way.", backgroundColor: .white, cellType: .single),
+//
+//        TodayItem.init(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple),
+//
+//        TodayItem.init(category: "HOLIDAYS", title: "Travel on Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9842324853, green: 0.9647551179, blue: 0.7214853168, alpha: 1), cellType: .single),
+//
+//        TodayItem.init(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple)
+//    ]
 
-        TodayItem.init(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple),
+    var items = [TodayItem]()
 
-        TodayItem.init(category: "HOLIDAYS", title: "Travel on Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9842324853, green: 0.9647551179, blue: 0.7214853168, alpha: 1), cellType: .single),
-
-        TodayItem.init(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple)
-    ]
-
-    // 20分
+    let acticityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: .whiteLarge)
+        aiv.color = .darkGray
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-//            layout.scrollDirection = .horizontal
-//        }
+        view.addSubview(acticityIndicatorView)
+        acticityIndicatorView.centerInSuperview()
+
+        fetchData()
 
         navigationController?.isNavigationBarHidden = true
         
@@ -38,6 +47,42 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayItem.CellType.single.rawValue)
         collectionView.register(TodayMultipleAppCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
+    }
+
+    fileprivate func fetchData() {
+        // dispatchGroup
+
+        let dispatchGroup = DispatchGroup()
+
+        var topGrossingGroup: AppGroup?
+        var gamesGroup: AppGroup?
+
+        dispatchGroup.enter()
+        Service.shared.fetchTopGrossing { (appGroup, err) in
+            // make sure to your errors
+            topGrossingGroup = appGroup
+            dispatchGroup.leave()
+        }
+
+        dispatchGroup.enter()
+        Service.shared.fetchGames { (appGroup, err) in
+            gamesGroup = appGroup
+            dispatchGroup.leave()
+        }
+
+        // completion block
+        dispatchGroup.notify(queue: .main) {
+            // I`ll have access to top grossing and games somehow
+            print("Finished Fetching")
+            self.acticityIndicatorView.stopAnimating()
+
+            self.items = [
+                TodayItem.init(category: "Daily List", title: topGrossingGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, apps: topGrossingGroup?.feed.results ?? []),
+                TodayItem.init(category: "Daily List", title: gamesGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, apps: gamesGroup?.feed.results ?? []),
+                TodayItem.init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you nee to intellingently organize your life the right way.", backgroundColor: .white, cellType: .single, apps: []),
+            ]
+            self.collectionView.reloadData()
+        }
     }
 
     var appFullscreenController: AppFullscreenController!
