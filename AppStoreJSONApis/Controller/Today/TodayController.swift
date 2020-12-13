@@ -203,6 +203,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 
         var superview = collectionView?.superview
 
+        // superviewがnilじゃなくなるまでループ
         while superview != nil {
             if let cell = superview as? TodayMultipleAppCell {
                 guard let indexPath = self.collectionView.indexPath(for: cell) else { return }
@@ -210,10 +211,9 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 
                 let fullController = TodayMultipleAppsController(mode: .fullscreen)
                 fullController.apps = apps
-                present(fullController, animated: true)
+                present(BackEnabledNavigationController(rootViewController: fullController), animated: true)
                 return
             }
-
             superview = superview?.superview
         }
     }
